@@ -1,0 +1,16 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+defaultTasks 'clean'
+
+dependencies {
+    compile 'io.dropwizard:dropwizard-core:1.1.4'
+}
+
+repositories {
+    mavenCentral()
+}
+
+mainClassName="service.Application"
+
