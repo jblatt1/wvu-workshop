@@ -1,9 +1,6 @@
 package resource;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -15,58 +12,47 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
+import dao.TodoDAO;
+import dao.TodoDAOInMemory;
 import model.Todo;
 
 @Path("/todo")
 @Produces(MediaType.APPLICATION_JSON)
 public class TodoResource {
 
-	private Map<String, Todo> todos = new HashMap<>();
-	private Integer counter = 0;
+	private TodoDAO dao = new TodoDAOInMemory();
 
 	@GET
 	public Collection<Todo> getTodos(@QueryParam("completed") Boolean completed) {
-		Collection<Todo> returnTodos = this.todos.values();
+		Collection<Todo> returnValue;
 		if (completed != null) {
-			Collection<Todo> filteredList = new ArrayList<>();
-			for(Todo each : returnTodos) {
-				if(completed.equals(each.getCompleted())) {
-					filteredList.add(each);
-				}
-			}
-			returnTodos = filteredList; 
+			returnValue = this.dao.getTodoByCompleted(completed);
+		} else {
+			returnValue = this.dao.getAllTodos();
 		}
-		return returnTodos;
+		return returnValue;
 	}
 
 	@GET
 	@Path("/{id}")
 	public Todo getTodo(@PathParam("id") String id) {
-		return this.todos.get(id);
+		return this.dao.getTodo(id);
 	}
 
 	@POST
 	public Todo createTodo(Todo todo) {
-		this.counter++;
-		String id = counter.toString();
-		todo.setId(id);
-		todo.setCompleted(false);
-		this.todos.put(id.toString(), todo);
-		return todo;
+		return this.dao.createTodo(todo);
 	}
 
 	@PUT
 	@Path("{id}")
 	public Todo updateTodo(@PathParam("id") String id, Todo patch) {
-		Todo oldTodo = this.todos.get(id);
-		Todo updated = oldTodo.update(patch);
-		this.todos.put(id, updated);
-		return updated;
+		return this.dao.updateTodo(id, patch);
 	}
 
 	@DELETE
 	@Path("{id}")
 	public void deleteTodo(@PathParam("id") String id) {
-		this.todos.remove(id);
+		this.dao.deleteTodo(id);
 	}
 }
