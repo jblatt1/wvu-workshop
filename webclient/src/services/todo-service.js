@@ -25,7 +25,6 @@ export default class TodoService {
     }
 
     update(todo) {
-        return Promise.resolve(todo);
         return fetch(this.host + todo.id, {
             method: 'PUT',
             mode: 'cors',
@@ -38,7 +37,6 @@ export default class TodoService {
     }
 
     delete(id) {
-        return Promise.resolve();
         return fetch(this.host + id, {
             method: 'DELETE',
         });
