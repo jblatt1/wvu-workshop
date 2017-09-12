@@ -28,7 +28,8 @@ public class TodoApplication extends Application<Configuration> {
 		Dynamic filter = environment.servlets().addFilter("CORS", CrossOriginFilter.class);
 		filter.addMappingForUrlPatterns(EnumSet.allOf(DispatcherType.class), true, "/*");
 		filter.setInitParameter("allowedOrigins", "*");
-		filter.setInitParameter("allowedOrigins", "GET,PUT,POST,DELETE,OPTIONS,HEAD,PATCH");
+		filter.setInitParameter("allowedHeaders", "X-Requested-With,Content-Type,Accept,Origin");
+		filter.setInitParameter("allowedMethods", "GET,PUT,POST,DELETE,OPTIONS,HEAD,PATCH");
 	}
 
 }
