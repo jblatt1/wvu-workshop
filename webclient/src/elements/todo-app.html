@@ -29,39 +29,25 @@
                 this._loadAll();
             }
 
-            _loadAll() {
-                WVU.todoService
-                    .getAll()
-                    .then(todos => {
-                        this.todos = todos;
-                    });
+            async _loadAll() {
+                this.todos = await WVU.todoService.getAll();
             }
 
-            _deleteTodo(e) {
-                WVU.todoService
-                    .delete(e.model.item.id)
-                    .then(() => {
-                        this.todos = this._removeTodoIndex(e.model.index);
-                    });
+            async _deleteTodo(e) {
+                await WVU.todoService.delete(e.model.item.id);
+                this.todos = this._removeTodoIndex(e.model.index);
             }
 
-            _saveTodo(e) {
-                WVU.todoService
-                    .update(e.model.item)
-                    .then(todo => {
-                        const temp = this._removeTodoIndex(e.model.index);
-                        temp.push(todo);
-                        this.todos = temp;
-                    });
+            async _saveTodo(e) {
+                const temp = await WVU.todoService.update(e.model.item);
+                temp.push(todo);
+                this.todos = temp;
             }
 
-            _createTodo(e) {
-                WVU.todoService
-                    .create(e.detail)
-                    .then(todo => {
-                        this.todos.push(todo);
-                        this.todos = this.todos.slice();
-                    });
+            async _createTodo(e) {
+                var todo = await WVU.todoService.create(e.detail);
+                this.todos.push(todo);
+                this.todos = this.todos.slice();
             }
 
             _removeTodoIndex(index) {
