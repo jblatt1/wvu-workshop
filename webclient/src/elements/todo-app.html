@@ -35,27 +35,16 @@
 
             async _deleteTodo(e) {
                 await WVU.todoService.delete(e.model.item.id);
-                this.todos = this._removeTodoIndex(e.model.index);
+                this.splice("todos", e.model.index, 1);
             }
 
             async _saveTodo(e) {
-                const temp = await WVU.todoService.update(e.model.item);
-                temp.push(todo);
-                this.todos = temp;
+                this.set(["todos", e.model.index], await WVU.todoService.update(e.model.item));
             }
 
             async _createTodo(e) {
-                var todo = await WVU.todoService.create(e.detail);
-                this.todos.push(todo);
-                this.todos = this.todos.slice();
+                this.push("todos", await WVU.todoService.create(e.detail));
             }
-
-            _removeTodoIndex(index) {
-                let temp = this.todos.slice(0, index);
-                temp.push(...this.todos.slice(index+1));
-                return temp;
-            }
-
         }
 customElements.define(TodoApp.is, TodoApp);
     </script>
