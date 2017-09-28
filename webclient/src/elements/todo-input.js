@@ -1,0 +1,51 @@
+import Polymer from "../node_modules/@polymer/polymer/polymer-element.js"
+import "../node_modules/@polymer/paper-checkbox/paper-checkbox.js"
+import "../node_modules/@polymer/paper-input/paper-input.js"
+import "../node_modules/@polymer/paper-button/paper-button.js"
+import "../node_modules/@polymer/iron-flex-layout/iron-flex-layout.js"
+
+export class TodoInput extends Polymer.Element {
+    static get is() {
+        return "todo-input";
+    }
+
+    static get template() {
+        return html`
+        <style>
+            :host {
+                display: block;
+                padding: 1rem;
+            }
+            .layout {
+                @apply(--layout-horizontal);
+                @apply(--layout-center);
+            }
+        </style>
+        <div class="layout">
+            <paper-checkbox id="checkBox" checked="{{completed}}"></paper-checkbox>
+            <paper-input no-label-float value="{{title}}">Title</paper-input>
+        </div>
+        <paper-button on-click="_save">Save</paper-button>
+        `;
+
+    }
+
+    static get properties() {
+        return {
+            title: String,
+            completed: Boolean
+        };
+    }
+
+    _save() {
+        this.dispatchEvent(new CustomEvent("create-todo", {
+            detail: {
+                title: this.title,
+                completed: this.completed
+            }
+        }));
+        this.title = "";
+        this.completed = false;
+    }
+}
+customElements.define(TodoInput.is, TodoInput);

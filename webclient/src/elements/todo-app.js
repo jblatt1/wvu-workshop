@@ -1,34 +1,36 @@
-<link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="../services/wvu.html">
-<link rel="import" href="./todo-item.html">
-<link rel="import" href="./todo-input.html">
+import Polymer from "../bower_components/@polymer/polymer/polymer-element.js"
+import WVU from "../services/wvu.js"
+import "./todo-item.js"
+import "./todo-input.js"
 
-<dom-module id="todo-app">
-    <template>
-        <dom-repeat items="[[todos]]">
-            <template>
-                <todo-item todo="[[item]]" on-save-todo="_saveTodo" on-delete-todo="_deleteTodo"></todo-item>
-            </template>
-        </dom-repeat>
-        <todo-input on-create-todo="_createTodo"></todo-input>
-    </template>
-    <script>
-        class TodoApp extends Polymer.Element {
+        export class TodoApp extends Element {
             static get is() {
                 return "todo-app";
             }
-
+        
+            static get template() {
+                return `
+                                    <dom-repeat items="[[todos]]">
+                                        <template>
+                                            <todo-item todo="[[item]]" on-save-todo="_saveTodo" on-delete-todo="_deleteTodo"></todo-item>
+                                        </template>
+                                    </dom-repeat>
+                                    <todo-input on-create-todo="_createTodo"></todo-input>
+                                `;
+            }
+        
+        
             static get properties() {
                 return [{
                     todos: Array,
                 }];
             }
-
+        
             constructor() {
                 super();
                 this._loadAll();
             }
-
+        
             _loadAll() {
                 WVU.todoService
                     .getAll()
@@ -36,7 +38,7 @@
                         this.todos = todos;
                     });
             }
-
+        
             _deleteTodo(e) {
                 WVU.todoService
                     .delete(e.model.item.id)
@@ -44,7 +46,7 @@
                         this.todos = this._removeTodoIndex(e.model.index);
                     });
             }
-
+        
             _saveTodo(e) {
                 WVU.todoService
                     .update(e.model.item)
@@ -54,7 +56,7 @@
                         this.todos = temp;
                     });
             }
-
+        
             _createTodo(e) {
                 WVU.todoService
                     .create(e.detail)
@@ -63,14 +65,12 @@
                         this.todos = this.todos.slice();
                     });
             }
-
+        
             _removeTodoIndex(index) {
                 let temp = this.todos.slice(0, index);
-                temp.push(...this.todos.slice(index+1));
+                temp.push(...this.todos.slice(index + 1));
                 return temp;
             }
-
+        
         }
-customElements.define(TodoApp.is, TodoApp);
-    </script>
-</dom-module>
+        customElements.define(TodoApp.is, TodoApp);
