@@ -8,6 +8,7 @@
   "license": "MIT",
   "homepage": "https://github.com/jblatt1/wvu-workshop",
   "private": true,
+  "flat": true,
   "ignore": [
     "**/.*",
     "node_modules",
@@ -16,11 +17,10 @@
     "tests"
   ],
   "dependencies": {
-    "polymer": "^2.0.2",
-    "paper-checkbox": "^2.0.1",
-    "paper-button": "^2.0.0",
-    "paper-input": "^2.0.2",
-    "paper-icon-button": "^2.0.1",
-    "iron-icons": "^2.0.1"
+    "@polymer/paper-checkbox": "^2.0.1",
+    "@polymer/paper-button": "^2.0.0",
+    "@polymer/paper-input": "^2.0.2",
+    "@polymer/paper-icon-button": "^2.0.1",
+    "@polymer/iron-icons": "^2.0.1"
   }
 }
