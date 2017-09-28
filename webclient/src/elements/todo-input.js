@@ -1,16 +1,16 @@
-import Polymer from "../node_modules/@polymer/polymer/polymer-element.js"
+import {Element} from "../node_modules/@polymer/polymer/polymer-element.js"
 import "../node_modules/@polymer/iron-flex-layout/iron-flex-layout.js"
 import "../node_modules/@polymer/paper-button/paper-button.js"
 import "../node_modules/@polymer/paper-checkbox/paper-checkbox.js"
 import "../node_modules/@polymer/paper-input/paper-input.js"
 
-export class TodoInput extends Polymer.Element {
+export class TodoInput extends Element {
     static get is() {
         return "todo-input";
     }
 
     static get template() {
-        return html`
+        return `
         <style>
             :host {
                 @apply(--layout-horizontal);

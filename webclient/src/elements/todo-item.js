@@ -1,7 +1,7 @@
-import Polymer from "../bower_components/@polymer/polymer/polymer-element.js"
-import "../bower_components/@polymer/paper-checkbox/paper-checkbox.js"
-import "../bower_components/@polymer/paper-icon-button/paper-icon-button.js"
-import "../bower_components/@polymer/iron-icons/iron-icons.js"
+import {Element} from "../node_modules/@polymer/polymer/polymer-element.js"
+import "../node_modules/@polymer/paper-checkbox/paper-checkbox.js"
+import "../node_modules/@polymer/paper-icon-button/paper-icon-button.js"
+import "../node_modules/@polymer/iron-icons/iron-icons.js"
 
 export class TodoItem extends Element {
     static get is() {
