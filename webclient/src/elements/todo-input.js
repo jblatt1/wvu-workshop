@@ -10,7 +10,7 @@ export class TodoInput extends Element {
     }
 
     static get template() {
-        return `
+        return html`
         <style>
             :host {
                 @apply(--layout-horizontal);

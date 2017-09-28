@@ -9,20 +9,19 @@ export class TodoItem extends Element {
     }
 
     static get template() {
-        return `
-        <style>
-            :host {
-                display: block;
-                padding: 1rem;
-                @apply(--layout-horizontal);
-                @apply(--layout-justified);
-                @apply(--layout-center);
-            }
-        </style>
-        <paper-checkbox id="checkBox" checked="{{todo.completed}}">[[todo.title]]</paper-checkbox>
-        <paper-icon-button icon="delete" on-click="_delete"></paper-icon-button>
-    
-                `;
+        return html`
+            <style>
+                :host {
+                    display: block;
+                    padding: 1rem;
+                    @apply(--layout-horizontal);
+                    @apply(--layout-justified);
+                    @apply(--layout-center);
+                }
+            </style>
+            <paper-checkbox id="checkBox" checked="{{todo.completed}}">[[todo.title]]</paper-checkbox>
+            <paper-icon-button icon="delete" on-click="_delete"></paper-icon-button>
+        `;
     }
 
     static get properties() {

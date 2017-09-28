@@ -9,14 +9,14 @@ export class TodoApp extends Element {
     }
 
     static get template() {
-        return `
+        return html`
            <dom-repeat items="[[todos]]">
                <template>
                    <todo-item todo="[[item]]" on-save-todo="_saveTodo" on-delete-todo="_deleteTodo"></todo-item>
                </template>
            </dom-repeat>
            <todo-input on-create-todo="_createTodo"></todo-input>
-           `;
+        `;
     }
 
 
