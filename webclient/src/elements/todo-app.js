@@ -31,46 +31,21 @@ import "./todo-input.js"
                 this._loadAll();
             }
         
-            _loadAll() {
-                WVU.todoService
-                    .getAll()
-                    .then(todos => {
-                        this.todos = todos;
-                    });
+            async _loadAll() {
+                this.todos = await WVU.todoService.getAll();
             }
         
-            _deleteTodo(e) {
-                WVU.todoService
-                    .delete(e.model.item.id)
-                    .then(() => {
-                        this.todos = this._removeTodoIndex(e.model.index);
-                    });
+            async _deleteTodo(e) {
+                await WVU.todoService.delete(e.model.item.id);
+                this.splice("todos", e.model.index, 1);
             }
         
-            _saveTodo(e) {
-                WVU.todoService
-                    .update(e.model.item)
-                    .then(todo => {
-                        const temp = this._removeTodoIndex(e.model.index);
-                        temp.push(todo);
-                        this.todos = temp;
-                    });
+            async _saveTodo(e) {
+                this.set(["todos", e.model.index], await WVU.todoService.update(e.model.item));
             }
         
-            _createTodo(e) {
-                WVU.todoService
-                    .create(e.detail)
-                    .then(todo => {
-                        this.todos.push(todo);
-                        this.todos = this.todos.slice();
-                    });
+            async _createTodo(e) {
+                this.push("todos", await WVU.todoService.create(e.detail));
             }
-        
-            _removeTodoIndex(index) {
-                let temp = this.todos.slice(0, index);
-                temp.push(...this.todos.slice(index + 1));
-                return temp;
-            }
-        
         }
         customElements.define(TodoApp.is, TodoApp);
