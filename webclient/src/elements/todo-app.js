@@ -41,7 +41,7 @@ export class TodoApp extends Element {
     }
 
     async _saveTodo(e) {
-        this.set(["todos", e.model.index], await WVU.todoService.update(e.model.item));
+        this.set(["todos", e.model.index], await WVU.todoService.update(e.detail.todo));
     }
 
     async _createTodo(e) {

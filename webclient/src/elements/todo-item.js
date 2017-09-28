@@ -19,7 +19,7 @@ export class TodoItem extends Element {
                     @apply(--layout-center);
                 }
             </style>
-            <paper-checkbox id="checkBox" checked="{{todo.completed}}">[[todo.title]]</paper-checkbox>
+            <paper-checkbox id="checkBox" on-checked-changed="_fire" checked="[[todo.completed]]">[[todo.title]]</paper-checkbox>
             <paper-icon-button icon="delete" on-click="_delete"></paper-icon-button>
         `;
     }
@@ -27,20 +27,21 @@ export class TodoItem extends Element {
     static get properties() {
         return {
             todo: {
-                type: Object,
-                observer: "_addCheckedListener"
+                type: Object
             }
         };
     }
 
-    _addCheckedListener() {
-        this.$.checkBox.removeEventListener("checked-changed", this._listener);
-        this._listener = this._fire.bind(this);
-        this.$.checkBox.addEventListener("checked-changed", this._listener);
-    }
-
-    _fire() {
-        this.dispatchEvent(new CustomEvent("save-todo"));
+    _fire(e) {
+        if (!this.isConnected) {
+            return;
+        }
+        this.todo.completed = e.detail.value;
+        this.dispatchEvent(new CustomEvent("save-todo", {
+            detail: {
+                todo: this.todo
+            }
+        }));
     }
 
     _delete() {

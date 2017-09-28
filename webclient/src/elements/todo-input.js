@@ -11,15 +11,15 @@ export class TodoInput extends Element {
 
     static get template() {
         return html`
-        <style>
-            :host {
-                @apply(--layout-horizontal);
-                @apply(--layout-center);
-            }
-        </style>
-        <paper-checkbox id="checkBox" checked="{{completed}}"></paper-checkbox>
-        <paper-input no-label-float value="{{title}}">Title</paper-input>
-        <paper-button on-click="_save">Save</paper-button>
+            <style>
+                :host {
+                    @apply(--layout-horizontal);
+                    @apply(--layout-center);
+                }
+            </style>
+            <paper-checkbox id="checkBox" checked="{{completed}}"></paper-checkbox>
+            <paper-input no-label-float value="{{title}}">Title</paper-input>
+            <paper-button on-click="_save">Save</paper-button>
         `;
 
     }
