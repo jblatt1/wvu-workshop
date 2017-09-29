@@ -1,6 +1,10 @@
 <html>
     <head>
-        <link rel="import" href="elements/todo-app.html">
+        <script>
+            html = a=>a[0];
+        </script>
+        <script type="module" src="elements/todo-app.js"></script>
+        <script nomodule src="dist/bundle.js"></script>
     </head>
     <body>
         <todo-app></todo-app>
