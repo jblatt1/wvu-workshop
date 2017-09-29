@@ -1,4 +1,4 @@
-export default class TodoService {
+class TodoService {
     constructor(host) {
         this.host = host + '/todo/';
     }
@@ -42,3 +42,7 @@ export default class TodoService {
         });
     }
 }
+
+const instance = new TodoService("http://localhost:8080")
+
+export default instance;
