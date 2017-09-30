@@ -3,37 +3,35 @@ class TodoService {
         this.host = host + '/todo/';
     }
 
-    async getAll() {
-        var response = await fetch(this.host);
-        return response.json();
+    getAll() {
+        return fetch(this.host)
+            .then(response => response.json());
     }
 
-    async get(id) {
-        var response = await fetch(this.host + id)
-        return response.json();
+    get(id) {
+        return fetch(this.host + id)
+            .then(response => response.json());
     }
 
-    async create(todo) {
-        var response = await fetch(this.host, {
+    create(todo) {
+        return fetch(this.host, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(todo)
-        })
-        return response.json();
+        }).then(response => response.json());
     }
 
-    async update(todo) {
-        var response = await fetch(this.host + todo.id, {
+    update(todo) {
+        return fetch(this.host + todo.id, {
             method: 'PUT',
             mode: 'cors',
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(todo)
-        });
-        return response.json();
+        }).then(response => response.json());
     }
 
     delete(id) {
