@@ -20,10 +20,10 @@
     "tests"
   ],
   "dependencies": {
-    "@polymer/paper-checkbox": "^2.0.1",
-    "@polymer/paper-button": "^2.0.0",
-    "@polymer/paper-input": "^2.0.2",
-    "@polymer/paper-icon-button": "^2.0.1",
-    "@polymer/iron-icons": "^2.0.1"
+    "@polymer/paper-checkbox": "^3.0.0-pre.1",
+    "@polymer/paper-button": "^3.0.0-pre.1",
+    "@polymer/paper-input": "^3.0.0-pre.1",
+    "@polymer/paper-icon-button": "^3.0.0-pre.1",
+    "@polymer/iron-icons": "^3.0.0-pre.1"
   }
 }
