@@ -1,7 +1,8 @@
 import {Element} from "../node_modules/@polymer/polymer/polymer-element.js"
-import {WVU} from "../services/wvu.js"
+import todoService from "../services/todo-service.js"
 import "./todo-item.js"
 import "./todo-input.js"
+top.html = a=>a[0];
 
 export class TodoApp extends Element {
     static get is() {
@@ -32,20 +33,20 @@ export class TodoApp extends Element {
     }
 
     async _loadAll() {
-        this.todos = await WVU.todoService.getAll();
+        this.todos = await todoService.getAll();
     }
 
     async _deleteTodo(e) {
-        await WVU.todoService.delete(e.model.item.id);
+        await todoService.delete(e.model.item.id);
         this.splice("todos", e.model.index, 1);
     }
 
     async _saveTodo(e) {
-        this.set(["todos", e.model.index], await WVU.todoService.update(e.detail.todo));
+        this.set(["todos", e.model.index], await todoService.update(e.detail.todo));
     }
 
     async _createTodo(e) {
-        this.push("todos", await WVU.todoService.create(e.detail));
+        this.push("todos", await todoService.create(e.detail));
     }
 }
 customElements.define(TodoApp.is, TodoApp);

@@ -62,7 +62,7 @@
     "@polymer/iron-meta" "^3.0.0-pre.1"
     "@polymer/polymer" "^3.0.0-pre.1"
 
-"@polymer/iron-icons@^2.0.1":
+"@polymer/iron-icons@^3.0.0-pre.1":
   version "3.0.0-pre.1"
   resolved "https://registry.yarnpkg.com/@polymer/iron-icons/-/iron-icons-3.0.0-pre.1.tgz#3e4b3fd9d1264465225fb89ff2daf171a1e3c37d"
   dependencies:
@@ -107,7 +107,7 @@
     "@polymer/paper-ripple" "^3.0.0-pre.1"
     "@polymer/polymer" "^3.0.0-pre.1"
 
-"@polymer/paper-button@^2.0.0":
+"@polymer/paper-button@^3.0.0-pre.1":
   version "3.0.0-pre.1"
   resolved "https://registry.yarnpkg.com/@polymer/paper-button/-/paper-button-3.0.0-pre.1.tgz#3376fb2fc543d9b09f752d8da856c80292de0e6a"
   dependencies:
@@ -116,7 +116,7 @@
     "@polymer/paper-styles" "^3.0.0-pre.1"
     "@polymer/polymer" "^3.0.0-pre.1"
 
-"@polymer/paper-checkbox@^2.0.1":
+"@polymer/paper-checkbox@^3.0.0-pre.1":
   version "3.0.0-pre.1"
   resolved "https://registry.yarnpkg.com/@polymer/paper-checkbox/-/paper-checkbox-3.0.0-pre.1.tgz#cfa62e0907eac061abd500b349c08ee89cc22fd7"
   dependencies:
@@ -127,7 +127,7 @@
     "@polymer/paper-styles" "^3.0.0-pre.1"
     "@polymer/polymer" "^3.0.0-pre.1"
 
-"@polymer/paper-icon-button@^2.0.1":
+"@polymer/paper-icon-button@^3.0.0-pre.1":
   version "3.0.0-pre.1"
   resolved "https://registry.yarnpkg.com/@polymer/paper-icon-button/-/paper-icon-button-3.0.0-pre.1.tgz#f0617d177c9478a676eab808cc882978f1031366"
   dependencies:
@@ -136,7 +136,7 @@
     "@polymer/paper-styles" "^3.0.0-pre.1"
     "@polymer/polymer" "^3.0.0-pre.1"
 
-"@polymer/paper-input@^2.0.2":
+"@polymer/paper-input@^3.0.0-pre.1":
   version "3.0.0-pre.1"
   resolved "https://registry.yarnpkg.com/@polymer/paper-input/-/paper-input-3.0.0-pre.1.tgz#d93ca8f5b70b821be5b19341b60092df7ca16fa8"
   dependencies:
@@ -175,5 +175,5 @@
   resolved "https://registry.yarnpkg.com/@webcomponents/shadycss/-/shadycss-1.0.6.tgz#5679919c43da77cbc884ba0bef6457111c65d7cd"
 
 "@webcomponents/webcomponentsjs@^1.0.0":
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/@webcomponents/webcomponentsjs/-/webcomponentsjs-1.0.13.tgz#c42e4c321a0b252f721bead04111ebd4dfc39969"
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@webcomponents/webcomponentsjs/-/webcomponentsjs-1.0.14.tgz#7760823bfaa94306cee087603a0b1a1d22ee005f"
