@@ -13,14 +13,16 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import dao.TodoDAO;
-import dao.TodoDAOInMemory;
 import model.Todo;
 
 @Path("/todo")
 @Produces(MediaType.APPLICATION_JSON)
 public class TodoResource {
+	private final TodoDAO dao;
 
-	private TodoDAO dao = new TodoDAOInMemory();
+	public TodoResource(TodoDAO dao) {
+		this.dao = dao;
+	}
 
 	@GET
 	public Collection<Todo> getTodos(@QueryParam("completed") Boolean completed) {
