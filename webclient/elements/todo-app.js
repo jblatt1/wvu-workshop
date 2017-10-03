@@ -32,21 +32,32 @@ export class TodoApp extends Element {
         this._loadAll();
     }
 
-    async _loadAll() {
-        this.todos = await todoService.getAll();
+    _loadAll() {
+        todoService.getAll()
+            .then(todos => {
+                this.todos = todos;
+            });
     }
 
-    async _deleteTodo(e) {
-        await todoService.delete(e.model.item.id);
-        this.splice("todos", e.model.index, 1);
+    _deleteTodo(e) {
+        todoService.delete(e.model.item.id)
+            .then(() => {
+                this.splice("todos", e.model.index, 1);
+            });
     }
 
-    async _saveTodo(e) {
-        this.set(["todos", e.model.index], await todoService.update(e.detail.todo));
+    _saveTodo(e) {
+        todoService.update(e.detail.todo)
+            .then(todo => {
+                this.set(["todos", e.model.index], todo);
+            });
     }
 
-    async _createTodo(e) {
-        this.push("todos", await todoService.create(e.detail));
+    _createTodo(e) {
+        todoService.create(e.detail)
+            .then(todo => {
+                this.push("todos", todo);
+            });
     }
 }
 customElements.define(TodoApp.is, TodoApp);
