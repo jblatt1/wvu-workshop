@@ -19,17 +19,33 @@ export class TodoItem extends Element {
                     @apply(--layout-center);
                 }
             </style>
-
-            <!--
             <paper-checkbox id="checkBox" on-checked-changed="_fire" checked="[[todo.completed]]">[[todo.title]]</paper-checkbox>
             <paper-icon-button icon="delete" on-click="_delete"></paper-icon-button>
-            -->
         `;
     }
 
     static get properties() {
         return {
+            todo: {
+                type: Object
+            }
         };
+    }
+
+    _fire(e) {
+        if (!this.isConnected) {
+            return;
+        }
+        this.todo.completed = e.detail.value;
+        this.dispatchEvent(new CustomEvent("save-todo", {
+            detail: {
+                todo: this.todo
+            }
+        }));
+    }
+
+    _delete() {
+        this.dispatchEvent(new CustomEvent("delete-todo"));
     }
 }
 customElements.define(TodoItem.is, TodoItem);
