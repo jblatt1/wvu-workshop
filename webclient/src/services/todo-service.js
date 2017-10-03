@@ -1,30 +1,31 @@
 class TodoService {
     constructor(host) {
         this.host = host + '/todo/';
+        this.todos = [{
+            title: "Get Milk",
+            completed: false,
+            id: 0
+        }];
+        this.count = 0;
     }
 
     async getAll() {
-        var response = await fetch(this.host);
-        return response.json();
+        return Promise.resolve(this.todos.slice());
     }
 
     async get(id) {
-        var response = await fetch(this.host + id)
-        return response.json();
+        let todos = this.todos.filter(todo => todo.id === id);
+        return Promise.resolve(todos[0]);
     }
 
     async create(todo) {
-        var response = await fetch(this.host, {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(todo)
-        })
-        return response.json();
+        this.todos.push(todo);
+        todo.id = this.count++;
+        return Promise.resolve(todo);
     }
 
     async update(todo) {
+        this
         var response = await fetch(this.host + todo.id, {
             method: 'PUT',
             mode: 'cors',
@@ -37,9 +38,14 @@ class TodoService {
     }
 
     delete(id) {
-        return fetch(this.host + id, {
-            method: 'DELETE',
+        let i = 0;
+        this.todos.forEach((todo, index) => {
+            if(todo.id === id) {
+                i = index;
+            }
         });
+        this.todos.splice(i, 1);
+        return Promise.resolve();
     }
 }
 
