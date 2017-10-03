@@ -7,6 +7,7 @@ import javax.servlet.FilterRegistration.Dynamic;
 
 import org.eclipse.jetty.servlets.CrossOriginFilter;
 
+import dao.TodoDAOInMemory;
 import io.dropwizard.Application;
 import io.dropwizard.Configuration;
 import io.dropwizard.setup.Environment;
@@ -20,7 +21,7 @@ public class TodoApplication extends Application<Configuration> {
 
 	@Override
 	public void run(Configuration configuration, Environment environment) throws Exception {
-		environment.jersey().register(new TodoResource());
+		environment.jersey().register(new TodoResource(new TodoDAOInMemory()));
 		addCorsHeader(environment);
 	}
 
