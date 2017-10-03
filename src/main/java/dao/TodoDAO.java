@@ -17,4 +17,6 @@ public interface TodoDAO {
 	Todo updateTodo(String id, Todo todo);
 
 	void deleteTodo(String id);
+	
+	Integer getTodoCount();
 }

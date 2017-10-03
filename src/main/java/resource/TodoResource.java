@@ -53,8 +53,15 @@ public class TodoResource {
 	}
 
 	@DELETE
-	@Path("{id}")
+	@Path("/{id}")
 	public void deleteTodo(@PathParam("id") String id) {
 		this.dao.deleteTodo(id);
 	}
+	
+	@GET
+	@Path("/count")
+	public Integer getTodoCount() {
+		return this.dao.getTodoCount();
+	}
+
 }

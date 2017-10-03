@@ -57,5 +57,10 @@ public class TodoDAOInMemory implements TodoDAO {
 	public void deleteTodo(String id) {
 		this.todos.remove(id);
 	}
+	
+	@Override
+	public Integer getTodoCount() {
+		return this.todos.size();
+	}
 
 }
