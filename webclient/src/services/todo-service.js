@@ -8,11 +8,6 @@ class TodoService {
         return response.json();
     }
 
-    async get(id) {
-        var response = await fetch(this.host + id)
-        return response.json();
-    }
-
     async create(todo) {
         var response = await fetch(this.host, {
             method: 'POST',
@@ -34,12 +29,6 @@ class TodoService {
             body: JSON.stringify(todo)
         });
         return response.json();
-    }
-
-    delete(id) {
-        return fetch(this.host + id, {
-            method: 'DELETE',
-        });
     }
 }
 
