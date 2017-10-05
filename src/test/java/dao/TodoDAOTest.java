@@ -16,70 +16,71 @@ import model.Todo;
 
 @RunWith(Parameterized.class)
 public class TodoDAOTest {
-	
-	public static TodoDAO dao;
 
-	@Parameters
-	public static Collection<Object[]> data() {
-		return Arrays.asList(new Object[][] { { new TodoDAOInMemory() } });
-	}
-	
-	public TodoDAOTest(TodoDAO daoParameter) {
-		dao = daoParameter;
-	}
-	
-	@Test
-	public void testCreateTodo() {
-		// Setup
-		Todo todo1 = new Todo();
-		todo1.setTitle("Show P = NP");
-		todo1.setCompleted(false);
-		
-		// Execute
-		Todo created1 = dao.createTodo(todo1);
-		
-		// Assert
-		assertNotNull(created1.getId());
-		assertEquals(todo1.getTitle(), created1.getTitle());
-		
-	    Todo loaded1 = dao.getTodo(created1.getId());
-	    assertEquals(created1, loaded1);
-	}
-	
-	@Test
-	public void testGetAll() {
-		// Setup
-		Todo todo1 = new Todo();
-		todo1.setTitle("Call home");
-		todo1.setCompleted(false);
-		
-		Todo todo2 = new Todo();
-		todo2.setTitle("Get life together");
-		todo2.setCompleted(true);
-		
-		dao.createTodo(todo1);
-		dao.createTodo(todo2);
-		
-		// Execute
-		Collection<Todo> loaded = dao.getAllTodos();
-		
-		// Assert
-		assertTrue(loaded.containsAll(Arrays.asList(todo1, todo2)));
-	}
-	
-	@Test
-	public void testDelete() {
-		// Setup
-		Todo todo = new Todo();
-		todo.setTitle("Get up in time to eat breakfast");
-		todo.setCompleted(false);
-		
-		Todo added = dao.createTodo(todo);
-		
-		// Execute
-		dao.deleteTodo(added.getId());
-		
-		// Assert
-		assertFalse(dao.getAllTodos().contains(added));
-	}
+    public static TodoDAO dao;
+
+    @Parameters
+    public static Collection<Object[]> data() {
+        return Arrays.asList(new Object[][] { { new TodoDAOInMemory() }, { new TodoDAOMongo() } });
+    }
+
+    public TodoDAOTest(TodoDAO daoParameter) {
+        dao = daoParameter;
+    }
+
+    @Test
+    public void testCreateTodo() {
+        // Setup
+        Todo todo = new Todo();
+        todo.setTitle("Show P = NP");
+        todo.setCompleted(false);
+
+        // Execute
+        Todo created = dao.createTodo(todo);
+
+        // Assert
+        assertNotNull(created.getId());
+        assertEquals(todo.getTitle(), created.getTitle());
+
+        Todo loaded1 = dao.getTodo(created.getId());
+        assertEquals(created, loaded1);
+    }
+
+    @Test
+    public void testGetAll() {
+        // Setup
+        Todo todo1 = new Todo();
+        todo1.setTitle("Call home");
+        todo1.setCompleted(false);
+
+        Todo todo2 = new Todo();
+        todo2.setTitle("Get life together");
+        todo2.setCompleted(true);
+
+        dao.createTodo(todo1);
+        dao.createTodo(todo2);
+
+        // Execute
+        Collection<Todo> loaded = dao.getAllTodos();
+
+        // Assert
+        assertTrue(loaded.containsAll(Arrays.asList(todo1, todo2)));
+    }
+
+    @Test
+    public void testDelete() {
+        // Setup
+        Todo todo = new Todo();
+        todo.setTitle("Get up in time to eat breakfast");
+        todo.setCompleted(false);
+
+        Todo added = dao.createTodo(todo);
+
+        // Execute
+        dao.deleteTodo(added.getId());
+
+        // Assert
+        assertFalse(dao.getAllTodos()
+                       .contains(added));
+    }
 }
