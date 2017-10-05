@@ -6,6 +6,8 @@ defaultTasks 'clean'
 
 dependencies {
     compile 'io.dropwizard:dropwizard-core:1.1.4'
+    compile 'io.dropwizard:dropwizard-assets:1.1.4'
+    compile 'com.github.jsimone:webapp-runner:8.5.11.3'
 }
 
 repositories {
