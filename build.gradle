@@ -23,3 +23,6 @@ repositories {
 
 mainClassName="service.Application"
 
+test {
+    exclude '*/**IntegrationTest.java'
+}

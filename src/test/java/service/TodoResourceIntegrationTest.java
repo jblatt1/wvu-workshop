@@ -66,7 +66,7 @@ public class TodoResourceIntegrationTest {
         // Verify
         assertEquals(4, (int) count);
 
-        // Execute
+        // Delete 1 and execute again
         RULE.client()
             .target("http://localhost:8080/todo/" + created.getId())
             .request()
