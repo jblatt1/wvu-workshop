@@ -11012,21 +11012,32 @@ class TodoApp extends __WEBPACK_IMPORTED_MODULE_0__node_modules_polymer_polymer_
         this._loadAll();
     }
 
-    async _loadAll() {
-        this.todos = await __WEBPACK_IMPORTED_MODULE_1__services_todo_service_js__["a" /* default */].getAll();
+    _loadAll() {
+        __WEBPACK_IMPORTED_MODULE_1__services_todo_service_js__["a" /* default */].getAll()
+            .then(todos => {
+                this.todos = todos;
+            });
     }
 
-    async _deleteTodo(e) {
-        await __WEBPACK_IMPORTED_MODULE_1__services_todo_service_js__["a" /* default */].delete(e.model.item.id);
-        this.splice("todos", e.model.index, 1);
+    _deleteTodo(e) {
+        __WEBPACK_IMPORTED_MODULE_1__services_todo_service_js__["a" /* default */].delete(e.model.item.id)
+            .then(() => {
+                this.splice("todos", e.model.index, 1);
+            });
     }
 
-    async _saveTodo(e) {
-        this.set(["todos", e.model.index], await __WEBPACK_IMPORTED_MODULE_1__services_todo_service_js__["a" /* default */].update(e.detail.todo));
+    _saveTodo(e) {
+        __WEBPACK_IMPORTED_MODULE_1__services_todo_service_js__["a" /* default */].update(e.detail.todo)
+            .then(todo => {
+                this.set(["todos", e.model.index], todo);
+            });
     }
 
-    async _createTodo(e) {
-        this.push("todos", await __WEBPACK_IMPORTED_MODULE_1__services_todo_service_js__["a" /* default */].create(e.detail));
+    _createTodo(e) {
+        __WEBPACK_IMPORTED_MODULE_1__services_todo_service_js__["a" /* default */].create(e.detail)
+            .then(todo => {
+                this.push("todos", todo);
+            });
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["TodoApp"] = TodoApp;
@@ -12102,7 +12113,7 @@ const TemplateStamp = Object(__WEBPACK_IMPORTED_MODULE_1__utils_mixin_js__["a" /
 "use strict";
 class TodoService {
     constructor(host) {
-        this.host = host + '/todo/';
+        this.host = host + '/api/todo/';
     }
 
     getAll() {
@@ -12129,9 +12140,16 @@ class TodoService {
             body: JSON.stringify(todo)
         }).then(response => response.json());
     }
+
+    delete(id) {
+        return fetch(this.host + id, {
+            method: "DELETE",
+            mode: 'cors',
+        });
+    }
 }
 
-const instance = new TodoService("http://localhost:8080");
+const instance = new TodoService("");
 
 /* harmony default export */ __webpack_exports__["a"] = (instance);
 

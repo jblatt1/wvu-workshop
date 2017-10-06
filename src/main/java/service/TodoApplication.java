@@ -24,7 +24,7 @@ public class TodoApplication extends Application<Configuration> {
 	@Override
 	public void initialize(Bootstrap<Configuration> bootstrap) {
 		super.initialize(bootstrap);
-		bootstrap.addBundle(new AssetsBundle("/assets"));
+		bootstrap.addBundle(new AssetsBundle("/assets/", "/"));
 	}
 
 	@Override
