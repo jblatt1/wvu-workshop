@@ -13,10 +13,6 @@ repositories {
     mavenCentral()
 }
 
-task stage(dependsOn: ['build', 'clean', 'fatJar'])
-build.mustRunAfter clean
-fatJar.mustRunAfter build
-
 task fatJar(type: Jar) {
     manifest {
         attributes 'Main-Class': 'service.TodoApplication'
@@ -25,6 +21,10 @@ task fatJar(type: Jar) {
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
 }
+
+task stage(dependsOn: ['build', 'clean', 'fatJar'])
+build.mustRunAfter clean
+fatJar.mustRunAfter build
 
 mainClassName="service.Application"
 
