@@ -3,3 +3,6 @@ deploy:
   provider: heroku
   api_key:
     secure: ILzNak6yz67Lv2kOuFggH4LUhHv+D+EqhUJwTR2zMKLNim4E0fq1Ut/ETc8oP8YniyrMX13A/lk/J0891pLyhNQptTLKjoxMdpWq+5F18fOAcymjChh3AEAYHJ6uHnaj4iGSzOm0BO7Mk/XDJ5TwggEtLpOXey+74rQcqt7eKv8TeOYBN+078BvNE7iWomxWYOxx6QCtLL313lN7eRgqwiW8UEWdB6kn4ZF+YwkSN5pL/bUhvJDY2odhd4NviyAV3L34NF9L73qnGQNDbHDIKYoqj2NiLW8AKmuH1yrrU5+JuTLJXZPxrVAp93yIfzrWUbXneZCyl8PagrJW6YD06Iz+a66OzRZBI6wPbmgYpx+MzBTvDpAn5J0Lgh9IVk+wOm4QLEbCgpoqez+FyXe+vhxRwNVkyMA/FlubRHulUOcUovcv3kXZBnHIe+YZL32wH5KCsP50F3+0qWRQlwtrBUf0Fc2xbVayA7JlVJwbYpV9gYgaBilCYLoBSro+dtOLKTrbuly83usVe5MbR+Bp3my4qkPy4fBq8f/2d/9DuEEO6RFDp+lmrR7OhqOFk7uNurQh/6L/xD1AOAPNvHZc1XhTEozcUh5GVV/X4IVSWiAWOSuMU1Tf86i75hhwNz6hA9ZH4Ytsqjesy/xlYExCrjBWVsFsJ7ObJ3jN2Vh/srE=
+  on:
+    repo: bhorn1/wvu-workshop
+    branch: rest-service
