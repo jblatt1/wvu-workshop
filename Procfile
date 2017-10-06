@@ -1,1 +1,1 @@
-web: java -jar build/libs/*.jar
+web: java -jar -Dserver.port=80 build/libs/*.jar
