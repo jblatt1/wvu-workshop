@@ -1,1 +1,1 @@
-web: java -jar build/libs/wvu-workshop-all.jar
+web: java -jar build/libs/*.jar
