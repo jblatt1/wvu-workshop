@@ -1,1 +1,1 @@
-web: java -jar -Dserver.port=$PORT $JAVA_OPTS build/libs/*.jar
+web: java -jar -Ddw.server.connector.port=$PORT $JAVA_OPTS build/libs/*.jar
