@@ -1,15 +1,28 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.3'
+    }
+}
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'application'
-
-defaultTasks 'clean'
+apply plugin: 'com.github.johnrengelman.shadow'
 
 dependencies {
     compile 'io.dropwizard:dropwizard-core:1.1.4'
     compile 'io.dropwizard:dropwizard-assets:1.1.4'
 }
 
+
+defaultTasks 'clean'
+
+
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 
@@ -22,9 +35,21 @@ task fatJar(type: Jar) {
     with jar
 }
 
-task stage(dependsOn: ['build', 'clean', 'fatJar'])
-build.mustRunAfter clean
-fatJar.mustRunAfter build
+shadowJar {
+    mergeServiceFiles()
+    exclude 'META-INF/*.DSA'
+    exclude 'META-INF/*.RSA'
+    with jar
+}
+jar {
+    manifest {
+        attributes 'Main-Class': 'main.java.service.TodoApplication'
+    }
+}
 
-mainClassName="service.Application"
+task stage(dependsOn: ['build', 'clean', 'shadowJar'])
+build.mustRunAfter clean
+shadowJar.mustRunAfter build
+
+mainClassName="service.TodoApplication"
 
