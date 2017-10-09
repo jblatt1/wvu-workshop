@@ -33,10 +33,7 @@ public class TodoResourceTest {
         when(dao.getAllTodos()).thenReturn(Lists.newArrayList(new Todo(), new Todo(), new Todo()));
 
         // Execute
-        Collection<Todo> loaded = resources.target("/todo")
-                                           .request()
-                                           .get()
-                                           .readEntity(new GenericType<Collection<Todo>>() {});
+        Collection<Todo> loaded = getTodos();
 
         // Verify
         assertEquals(3, loaded.size());
@@ -47,10 +44,11 @@ public class TodoResourceTest {
         // Setup
         Todo todo = new Todo();
         todo.setId(UUID.randomUUID()
-                        .toString());
+                       .toString());
         todo.setTitle("Treat yourself");
 
         Todo edited = new Todo();
+        edited.setId(todo.getId());
         edited.setTitle("Treat yoself");
 
         Todo result = todo.update(edited);
@@ -58,12 +56,47 @@ public class TodoResourceTest {
         when(dao.updateTodo(eq(todo.getId()), eq(edited))).thenReturn(result);
 
         // Execute
-        Todo updated = resources.target("/todo/" + todo.getId())
-                                .request()
-                                .put(Entity.json(edited))
-                                .readEntity(Todo.class);
+        Todo updated =  updateTodo(edited);
 
         // Verify
         assertEquals("Treat yoself", updated.getTitle());
     }
+
+    // Test Helpers
+
+    private Collection<Todo> getTodos() {
+        return resources.target("/todo")
+                        .request()
+                        .get()
+                        .readEntity(new GenericType<Collection<Todo>>() {
+                        });
+    }
+
+    private Todo getTodo(String id) {
+        return resources.target("/todo/" + id)
+                        .request()
+                        .get()
+                        .readEntity(Todo.class);
+    }
+
+    private Todo createTodo(Todo todo) {
+        return resources.target("/todo")
+                        .request()
+                        .post(Entity.json(Todo.class))
+                        .readEntity(Todo.class);
+    }
+
+    private Todo updateTodo(Todo todo) {
+        return resources.target("/todo/" + todo.getId())
+                        .request()
+                        .put(Entity.json(todo))
+                        .readEntity(Todo.class);
+    }
+
+    private void deleteTodo(String id) {
+        resources.target("/todo/" + id)
+                 .request()
+                 .delete();
+    }
+    
 }

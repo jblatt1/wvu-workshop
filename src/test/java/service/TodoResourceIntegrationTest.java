@@ -2,10 +2,15 @@ package service;
 
 import static org.junit.Assert.*;
 
+import java.util.Collection;
+
 import javax.ws.rs.client.Entity;
+import javax.ws.rs.core.GenericType;
 
 import org.junit.ClassRule;
 import org.junit.Test;
+
+import com.fasterxml.jackson.core.type.TypeReference;
 
 import io.dropwizard.Configuration;
 import io.dropwizard.testing.ResourceHelpers;
@@ -33,6 +38,7 @@ public class TodoResourceIntegrationTest {
                            .readEntity(Todo.class);
 
         // Verify
+        assertNotNull(todo.getId());
         assertEquals(todo.getTitle(), created.getTitle());
 
         Todo loaded = RULE.client()
@@ -46,9 +52,9 @@ public class TodoResourceIntegrationTest {
     @Test
     public void testCount() {
         // Setup
-        createTodo();
-        createTodo();
-        createTodo();
+        createTodo(new Todo());
+        createTodo(new Todo());
+        createTodo(new Todo());
 
         Todo created = RULE.client()
                            .target("http://localhost:8080/todo")
@@ -81,10 +87,44 @@ public class TodoResourceIntegrationTest {
         assertEquals(3, (int) count);
     }
 
-    private void createTodo() {
+   // Test Helpers
+
+    private Collection<Todo> getTodos() {
+        return RULE.client()
+                   .target("http://localhost:8080/todo")
+                   .request()
+                   .get()
+                   .readEntity(new GenericType<Collection<Todo>>() {
+                   });
+    }
+
+    private Todo getTodo(String id) {
+        return RULE.client()
+                   .target("http://localhost:8080/todo/" + id)
+                   .request()
+                   .get()
+                   .readEntity(Todo.class);
+    }
+    
+    private void createTodo(Todo todo) {
         RULE.client()
             .target("http://localhost:8080/todo")
             .request()
-            .post(Entity.json(new Todo()));
+            .post(Entity.json(todo));
+    }
+
+    private Todo updateTodo(Todo patch) {
+        return RULE.client()
+                   .target("http://localhost:8080/todo/" + patch.getId())
+                   .request()
+                   .put(Entity.json(patch))
+                   .readEntity(Todo.class);
+    }
+
+    private void deleteTodo(String id) {
+        RULE.client()
+            .target("http://localhost:8080/todo/" + id)
+            .request()
+            .delete();
     }
 }
