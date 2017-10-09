@@ -6,15 +6,17 @@ import model.Todo;
 
 public interface TodoDAO {
 
-	Collection<Todo> getAllTodos();
+    Collection<Todo> getAllTodos();
 
-	Collection<Todo> getTodoByCompleted(Boolean completed);
+    Collection<Todo> getTodoByCompleted(Boolean completed);
 
-	Todo getTodo(String id);
+    Todo getTodo(String id);
 
-	Todo createTodo(Todo todo);
+    Todo createTodo(Todo todo);
 
-	Todo updateTodo(String id, Todo todo);
+    Todo updateTodo(String id, Todo todo);
 
-	void deleteTodo(String id);
+    void deleteTodo(String id);
+
+    Integer getTodoCount();
 }

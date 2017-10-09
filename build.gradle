@@ -1,3 +1,6 @@
+plugins {
+  id 'com.sourcemuse.mongo' version '1.0.0'
+}
 buildscript {
     repositories {
         jcenter()
@@ -13,7 +16,12 @@ apply plugin: 'application'
 apply plugin: 'com.github.johnrengelman.shadow'
 
 dependencies {
+    compile 'io.dropwizard:dropwizard-client:1.1.4'
     compile 'io.dropwizard:dropwizard-core:1.1.4'
+    compile 'org.mongodb:mongo-java-driver:3.5.0'
+    testCompile 'io.dropwizard:dropwizard-testing:1.1.4'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:2.8.47'
     compile 'io.dropwizard:dropwizard-assets:1.1.4'
 }
 
@@ -53,3 +61,6 @@ shadowJar.mustRunAfter build
 
 mainClassName="service.TodoApplication"
 
+test {
+    exclude '*/**IntegrationTest.java'
+}

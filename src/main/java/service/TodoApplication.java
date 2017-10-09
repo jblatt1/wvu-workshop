@@ -17,6 +17,7 @@ import resource.TodoResource;
 
 public class TodoApplication extends Application<Configuration> {
 
+
 	public static void main(String[] args) throws Exception {
 		System.out.println("Todo Main");
 		new TodoApplication().run(new String[] { "server", "src/main/resources/config.yaml" });
