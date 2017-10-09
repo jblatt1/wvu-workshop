@@ -10,8 +10,6 @@ import javax.ws.rs.core.GenericType;
 import org.junit.ClassRule;
 import org.junit.Test;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-
 import io.dropwizard.Configuration;
 import io.dropwizard.testing.ResourceHelpers;
 import io.dropwizard.testing.junit.DropwizardAppRule;
