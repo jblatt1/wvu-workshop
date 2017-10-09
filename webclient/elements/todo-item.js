@@ -13,14 +13,22 @@ export class TodoItem extends Element {
             <style>
                 :host {
                     display: block;
-                    padding: 1rem;
+                    padding: 0 0 10px 0;
+                    margin-bottom: 10px;
+                    font-weight: bold;
+                    border-bottom: 1px solid #d9e5e0;
                     @apply(--layout-horizontal);
                     @apply(--layout-justified);
                     @apply(--layout-center);
                 }
+                paper-icon-button {
+                    padding: 0;
+                    width: 1.5em;
+                    height: 1.5em;
+                }
             </style>
             <paper-checkbox id="checkBox" on-checked-changed="_fire" checked="[[todo.completed]]">[[todo.title]]</paper-checkbox>
-            <paper-icon-button icon="delete" on-click="_delete"></paper-icon-button>
+            <paper-icon-button icon="remove-circle" on-click="_delete"></paper-icon-button>
         `;
     }
 

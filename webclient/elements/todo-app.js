@@ -11,12 +11,45 @@ export class TodoApp extends Element {
 
     static get template() {
         return html`
-           <dom-repeat items="[[todos]]">
-               <template>
-                   <todo-item todo="[[item]]" on-save-todo="_saveTodo" on-delete-todo="_deleteTodo"></todo-item>
-               </template>
-           </dom-repeat>
-           <todo-input on-create-todo="_createTodo"></todo-input>
+            <style>
+                :host {
+                    --primary-color: #33c485;
+                    --paper-checkbox-checked-color: #a1aba7;
+                    --paper-checkbox-label-checked-color: #a1aba7;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #33c485;
+                    color: #323735;
+                    overflow: hidden;
+                    font-family: 'PT Sans', sans-serif;
+                }
+                .todo-wrapper {
+                    background-color: white;
+                    width: 300px;
+                    margin: 50px auto 0 auto;
+                    min-height: 350px;
+                    max-height: 500px;
+                    overflow: auto;
+                    border-radius: 4px;
+                    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+                    padding: 25px;
+                }
+                h1 {
+                    margin: 0;
+                    padding: 10px 0 25px 0;
+                    text-align: center;
+                }
+            </style>
+            <div class="todo-wrapper">
+                <h1>Todo List</h1>
+                <dom-repeat items="[[todos]]">
+                   <template>
+                       <todo-item todo="[[item]]" on-save-todo="_saveTodo" on-delete-todo="_deleteTodo"></todo-item>
+                   </template>
+                </dom-repeat>
+                <todo-input on-create-todo="_createTodo"></todo-input>
+           </div>
         `;
     }
 
