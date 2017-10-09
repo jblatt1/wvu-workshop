@@ -1,12 +1,10 @@
-plugins {
-  id 'com.sourcemuse.mongo' version '1.0.0'
-}
 buildscript {
     repositories {
         jcenter()
     }
     dependencies {
         classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.3'
+        classpath 'com.sourcemuse.gradle.plugin:gradle-mongo-plugin:1.0.2'
     }
 }
 
@@ -14,15 +12,16 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'application'
 apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'com.sourcemuse.mongo'
 
 dependencies {
+    compile 'io.dropwizard:dropwizard-assets:1.1.4'
     compile 'io.dropwizard:dropwizard-client:1.1.4'
     compile 'io.dropwizard:dropwizard-core:1.1.4'
     compile 'org.mongodb:mongo-java-driver:3.5.0'
     testCompile 'io.dropwizard:dropwizard-testing:1.1.4'
     testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-core:2.8.47'
-    compile 'io.dropwizard:dropwizard-assets:1.1.4'
 }
 
 
@@ -49,6 +48,7 @@ shadowJar {
     exclude 'META-INF/*.RSA'
     with jar
 }
+
 jar {
     manifest {
         attributes 'Main-Class': 'main.java.service.TodoApplication'
@@ -62,5 +62,6 @@ shadowJar.mustRunAfter build
 mainClassName="service.TodoApplication"
 
 test {
-    exclude '*/**IntegrationTest.java'
+    exclude '*/**IntegrationTest*'
+    runWithMongoDb = true
 }

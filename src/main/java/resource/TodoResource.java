@@ -18,6 +18,7 @@ import model.Todo;
 @Path("/todo")
 @Produces(MediaType.APPLICATION_JSON)
 public class TodoResource {
+    
     private final TodoDAO dao;
 
     public TodoResource(TodoDAO dao) {
@@ -63,6 +64,5 @@ public class TodoResource {
     public Integer getTodoCount() {
         return this.dao.getTodoCount();
     }
-
 
 }

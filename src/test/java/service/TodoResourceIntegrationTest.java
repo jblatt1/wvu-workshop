@@ -42,24 +42,34 @@ public class TodoResourceIntegrationTest {
     @Test
     public void testCount() {
         // Setup
-        createTodo(new Todo());
-        createTodo(new Todo());
-        createTodo(new Todo());
-
-        Todo createdToDelete = createTodo(new Todo());
+        Todo todo1 = new Todo();
+        todo1.setTitle("some todo");
+        todo1.setCompleted(false);
+        
+        Todo todo2 = new Todo();
+        todo2.setTitle("some todo");
+        todo2.setCompleted(false);
+        
+        Todo todo3 = new Todo();
+        todo3.setTitle("some todo");
+        todo3.setCompleted(false);
+        
+        createTodo(todo1);
+        createTodo(todo2);
+        createTodo(todo3);
 
         // Execute
         Integer count = RULE.client()
-                            .target("http://localhost:8080/todo/count")
+                            .target("http://localhost:8080/api/todo/count")
                             .request()
                             .get()
                             .readEntity(Integer.class);
 
         // Verify
-        assertEquals(4, (int) count);
+        assertEquals(3, (int) count);
 
         // Delete 1 and execute again
-        deleteTodo(createdToDelete.getId());
+        deleteTodo(todo2.getId());
         count = RULE.client()
                     .target("http://localhost:8080/todo/count")
                     .request()
@@ -67,14 +77,14 @@ public class TodoResourceIntegrationTest {
                     .readEntity(Integer.class);
 
         // Verify
-        assertEquals(3, (int) count);
+        assertEquals(2, (int) count);
     }
 
-   // Test Helpers
+    // Test Helpers
 
     private Collection<Todo> getTodos() {
         return RULE.client()
-                   .target("http://localhost:8080/todo")
+                   .target("http://localhost:8080/api/todo")
                    .request()
                    .get()
                    .readEntity(new GenericType<Collection<Todo>>() {
@@ -83,22 +93,23 @@ public class TodoResourceIntegrationTest {
 
     private Todo getTodo(String id) {
         return RULE.client()
-                   .target("http://localhost:8080/todo/" + id)
+                   .target("http://localhost:8080/api/todo/" + id)
                    .request()
                    .get()
                    .readEntity(Todo.class);
     }
-    
+
     private Todo createTodo(Todo todo) {
         return RULE.client()
-            .target("http://localhost:8080/todo")
-            .request()
-            .post(Entity.json(todo)).readEntity(Todo.class);
+                   .target("http://localhost:8080/api/api/todo")
+                   .request()
+                   .post(Entity.json(todo))
+                   .readEntity(Todo.class);
     }
 
     private Todo updateTodo(Todo patch) {
         return RULE.client()
-                   .target("http://localhost:8080/todo/" + patch.getId())
+                   .target("http://localhost:8080/api/todo/" + patch.getId())
                    .request()
                    .put(Entity.json(patch))
                    .readEntity(Todo.class);
@@ -106,7 +117,7 @@ public class TodoResourceIntegrationTest {
 
     private void deleteTodo(String id) {
         RULE.client()
-            .target("http://localhost:8080/todo/" + id)
+            .target("http://localhost:8080/api/todo/" + id)
             .request()
             .delete();
     }
