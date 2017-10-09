@@ -1,6 +1,6 @@
 class TodoService {
     constructor(host) {
-        this.host = host + '/todo/';
+        this.host = host + '/api/todo/';
     }
 
     getAll() {
@@ -36,6 +36,6 @@ class TodoService {
     }
 }
 
-const instance = new TodoService("http://localhost:8080");
+const instance = new TodoService("0.0.0.0:" + process.env.PORT || 80);
 
 export default instance;

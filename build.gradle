@@ -1,12 +1,19 @@
 plugins {
   id 'com.sourcemuse.mongo' version '1.0.0'
 }
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.3'
+    }
+}
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'application'
-
-defaultTasks 'clean'
+apply plugin: 'com.github.johnrengelman.shadow'
 
 dependencies {
     compile 'io.dropwizard:dropwizard-client:1.1.4'
@@ -15,13 +22,44 @@ dependencies {
     testCompile 'io.dropwizard:dropwizard-testing:1.1.4'
     testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-core:2.8.47'
+    compile 'io.dropwizard:dropwizard-assets:1.1.4'
 }
 
+
+defaultTasks 'clean'
+
+
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 
-mainClassName="service.Application"
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'service.TodoApplication'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+shadowJar {
+    mergeServiceFiles()
+    exclude 'META-INF/*.DSA'
+    exclude 'META-INF/*.RSA'
+    with jar
+}
+jar {
+    manifest {
+        attributes 'Main-Class': 'main.java.service.TodoApplication'
+    }
+}
+
+task stage(dependsOn: ['build', 'clean', 'shadowJar'])
+build.mustRunAfter clean
+shadowJar.mustRunAfter build
+
+mainClassName="service.TodoApplication"
 
 test {
     exclude '*/**IntegrationTest.java'
