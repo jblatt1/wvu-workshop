@@ -29,21 +29,13 @@ public class TodoResourceIntegrationTest {
         todo.setCompleted(true);
 
         // Execute
-        Todo created = RULE.client()
-                           .target("http://localhost:8080/todo/")
-                           .request()
-                           .post(Entity.json(todo))
-                           .readEntity(Todo.class);
+        Todo created = createTodo(todo);
 
         // Verify
-        assertNotNull(todo.getId());
+        assertNotNull(created.getId());
         assertEquals(todo.getTitle(), created.getTitle());
 
-        Todo loaded = RULE.client()
-                          .target("http://localhost:8080/todo/" + created.getId())
-                          .request()
-                          .get()
-                          .readEntity(Todo.class);
+        Todo loaded = getTodo(created.getId());
         assertEquals(created, loaded);
     }
 
@@ -54,11 +46,7 @@ public class TodoResourceIntegrationTest {
         createTodo(new Todo());
         createTodo(new Todo());
 
-        Todo created = RULE.client()
-                           .target("http://localhost:8080/todo")
-                           .request()
-                           .post(Entity.json(new Todo()))
-                           .readEntity(Todo.class);
+        Todo createdToDelete = createTodo(new Todo());
 
         // Execute
         Integer count = RULE.client()
@@ -71,10 +59,7 @@ public class TodoResourceIntegrationTest {
         assertEquals(4, (int) count);
 
         // Delete 1 and execute again
-        RULE.client()
-            .target("http://localhost:8080/todo/" + created.getId())
-            .request()
-            .delete();
+        deleteTodo(createdToDelete.getId());
         count = RULE.client()
                     .target("http://localhost:8080/todo/count")
                     .request()
@@ -104,11 +89,11 @@ public class TodoResourceIntegrationTest {
                    .readEntity(Todo.class);
     }
     
-    private void createTodo(Todo todo) {
-        RULE.client()
+    private Todo createTodo(Todo todo) {
+        return RULE.client()
             .target("http://localhost:8080/todo")
             .request()
-            .post(Entity.json(todo));
+            .post(Entity.json(todo)).readEntity(Todo.class);
     }
 
     private Todo updateTodo(Todo patch) {
