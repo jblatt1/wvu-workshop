@@ -39,7 +39,6 @@ public class TodoResourceTest {
     public void testDelete() {
         // Setup
 
-
         // Execute
 
         // Verify

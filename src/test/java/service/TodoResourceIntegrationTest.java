@@ -25,9 +25,7 @@ public class TodoResourceIntegrationTest {
     public void testCreateTodo() {
         // Setup
         
-
         // Execute
-        
 
         // Verify
         
@@ -41,10 +39,6 @@ public class TodoResourceIntegrationTest {
 
         // Verify
 
-        // Delete 1 and execute again
-
-        // Verify
-        
     }
 
    // Test Helpers
