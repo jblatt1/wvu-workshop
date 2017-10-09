@@ -6,4 +6,4 @@ deploy:
   app: todo-workshop-wvu
   on:
     repo: bhorn1/wvu-workshop
-    branch: rest-service
+    branch: css-addition

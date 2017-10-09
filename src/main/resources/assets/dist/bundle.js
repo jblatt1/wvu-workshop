@@ -70,13 +70,13 @@
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_legacy_legacy_element_mixin_js__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__lib_legacy_polymer_fn_js__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__lib_legacy_templatizer_behavior_js__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__lib_elements_dom_bind_js__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__lib_elements_dom_repeat_js__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__lib_elements_dom_if_js__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__lib_elements_array_selector_js__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__lib_elements_custom_style_js__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__lib_legacy_mutable_data_behavior_js__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__lib_legacy_templatizer_behavior_js__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__lib_elements_dom_bind_js__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__lib_elements_dom_repeat_js__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__lib_elements_dom_if_js__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__lib_elements_array_selector_js__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__lib_elements_custom_style_js__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__lib_legacy_mutable_data_behavior_js__ = __webpack_require__(66);
 
 
 
@@ -106,7 +106,7 @@ let Polymer;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__class_js__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__class_js__ = __webpack_require__(58);
 
 
 const Polymer = function(info) {
@@ -135,7 +135,7 @@ const Polymer = function(info) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_boot_js__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_boot_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__utils_boot_js__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_settings_js__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_flattened_nodes_observer_js__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_flattened_nodes_observer_js__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_flush_js__ = __webpack_require__(23);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_3__utils_flush_js__["b"]; });
 /* unused harmony reexport addDebouncer */
@@ -1151,7 +1151,7 @@ MutableData._mutablePropertyChange = mutablePropertyChange;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polymer_polymer_js__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__color_js__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__color_js__ = __webpack_require__(67);
 
 
 const $_documentContainer = document.createElement('div');
@@ -7217,7 +7217,7 @@ const IronA11yKeysBehavior = {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polymer_polymer_js__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__paper_ripple_paper_ripple_js__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__paper_ripple_paper_ripple_js__ = __webpack_require__(70);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__iron_behaviors_iron_button_state_js__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__polymer_lib_legacy_polymer_dom_js__ = __webpack_require__(3);
 
@@ -7337,7 +7337,7 @@ const PaperRippleBehavior = {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polymer_polymer_js__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__font_roboto_roboto_js__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__font_roboto_roboto_js__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__font_roboto_roboto_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__font_roboto_roboto_js__);
 
 
@@ -7610,7 +7610,7 @@ function _cssFromModuleImports(module) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polymer_polymer_js__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__paper_styles_default_theme_js__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__paper_behaviors_paper_checked_element_behavior_js__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__paper_behaviors_paper_checked_element_behavior_js__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__polymer_lib_legacy_polymer_fn_js__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__polymer_lib_utils_render_status_js__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__paper_behaviors_paper_inky_focus_behavior_js__ = __webpack_require__(26);
@@ -7896,13 +7896,13 @@ Object(__WEBPACK_IMPORTED_MODULE_3__polymer_lib_legacy_polymer_fn_js__["a" /* Po
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__webcomponents_shadycss_entrypoints_apply_shim_js__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__webcomponents_shadycss_entrypoints_apply_shim_js__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_element_mixin_js__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mixins_gesture_event_listeners_js__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_mixin_js__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_import_href_js__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_import_href_js__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_render_status_js__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_unresolved_js__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_unresolved_js__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_unresolved_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__utils_unresolved_js__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__polymer_dom_js__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_gestures_js__ = __webpack_require__(39);
@@ -10976,8 +10976,8 @@ const PaperInputAddonBehavior = {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_polymer_polymer_polymer_element_js__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_todo_service_js__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__todo_item_js__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__todo_input_js__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__todo_item_js__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__todo_input_js__ = __webpack_require__(74);
 
 
 
@@ -10991,12 +10991,45 @@ class TodoApp extends __WEBPACK_IMPORTED_MODULE_0__node_modules_polymer_polymer_
 
     static get template() {
         return html`
-           <dom-repeat items="[[todos]]">
-               <template>
-                   <todo-item todo="[[item]]" on-save-todo="_saveTodo" on-delete-todo="_deleteTodo"></todo-item>
-               </template>
-           </dom-repeat>
-           <todo-input on-create-todo="_createTodo"></todo-input>
+            <style>
+                :host {
+                    --primary-color: #33c485;
+                    --paper-checkbox-checked-color: #a1aba7;
+                    --paper-checkbox-label-checked-color: #a1aba7;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #33c485;
+                    color: #323735;
+                    overflow: hidden;
+                    font-family: 'PT Sans', sans-serif;
+                }
+                .todo-wrapper {
+                    background-color: white;
+                    width: 300px;
+                    margin: 50px auto 0 auto;
+                    min-height: 350px;
+                    max-height: 500px;
+                    overflow: auto;
+                    border-radius: 4px;
+                    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+                    padding: 25px;
+                }
+                h1 {
+                    margin: 0;
+                    padding: 10px 0 25px 0;
+                    text-align: center;
+                }
+            </style>
+            <div class="todo-wrapper">
+                <h1>Todo List</h1>
+                <dom-repeat items="[[todos]]">
+                   <template>
+                       <todo-item todo="[[item]]" on-save-todo="_saveTodo" on-delete-todo="_deleteTodo"></todo-item>
+                   </template>
+                </dom-repeat>
+                <todo-input on-create-todo="_createTodo"></todo-input>
+           </div>
         `;
     }
 
@@ -12111,7 +12144,7 @@ const TemplateStamp = Object(__WEBPACK_IMPORTED_MODULE_1__utils_mixin_js__["a" /
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-class TodoService {
+/* WEBPACK VAR INJECTION */(function(process) {class TodoService {
     constructor(host) {
         this.host = host + '/api/todo/';
     }
@@ -12149,20 +12182,211 @@ class TodoService {
     }
 }
 
-const instance = new TodoService("");
+const instance = new TodoService("0.0.0.0:" + process.env.PORT || 80);
 
 /* harmony default export */ __webpack_exports__["a"] = (instance);
 
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(50)))
 
 /***/ }),
 /* 50 */
+/***/ (function(module, exports) {
+
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+
+/***/ }),
+/* 51 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_polymer_polymer_polymer_element_js__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_polymer_paper_checkbox_paper_checkbox_js__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_polymer_paper_icon_button_paper_icon_button_js__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__node_modules_polymer_iron_icons_iron_icons_js__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_polymer_paper_icon_button_paper_icon_button_js__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__node_modules_polymer_iron_icons_iron_icons_js__ = __webpack_require__(72);
 
 
 
@@ -12178,14 +12402,22 @@ class TodoItem extends __WEBPACK_IMPORTED_MODULE_0__node_modules_polymer_polymer
             <style>
                 :host {
                     display: block;
-                    padding: 1rem;
+                    padding: 0 0 10px 0;
+                    margin-bottom: 10px;
+                    font-weight: bold;
+                    border-bottom: 1px solid #d9e5e0;
                     @apply(--layout-horizontal);
                     @apply(--layout-justified);
                     @apply(--layout-center);
                 }
+                paper-icon-button {
+                    padding: 0;
+                    width: 1.5em;
+                    height: 1.5em;
+                }
             </style>
             <paper-checkbox id="checkBox" on-checked-changed="_fire" checked="[[todo.completed]]">[[todo.title]]</paper-checkbox>
-            <paper-icon-button icon="delete" on-click="_delete"></paper-icon-button>
+            <paper-icon-button icon="remove-circle" on-click="_delete"></paper-icon-button>
         `;
     }
 
@@ -12219,14 +12451,14 @@ customElements.define(TodoItem.is, TodoItem);
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_apply_shim_js__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_apply_shim_js__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_template_map_js__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_style_util_js__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_apply_shim_utils_js__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_apply_shim_utils_js__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_document_wait_js__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_common_utils_js__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__src_custom_style_interface_js__ = __webpack_require__(37);
@@ -12427,7 +12659,7 @@ if (!window.ShadyCSS || !window.ShadyCSS.ScopingShim) {
 window.ShadyCSS.ApplyShim = applyShim;
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12899,7 +13131,7 @@ Object.defineProperty(ApplyShim.prototype, 'invalidCallback', {
 /* harmony default export */ __webpack_exports__["a"] = (ApplyShim);
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13065,7 +13297,7 @@ function elementsAreInvalid() {
 }
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13146,7 +13378,7 @@ const importHref = function(href, onload, onerror, optAsync) {
 
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports) {
 
 function resolve() {
@@ -13161,7 +13393,7 @@ if (document.readyState === 'interactive' || document.readyState === 'complete')
 
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13409,7 +13641,7 @@ class FlattenedNodesObserver {
 
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13680,7 +13912,7 @@ const Class = function(info) {
 
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13825,7 +14057,7 @@ let Templatizer = {
 
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13953,7 +14185,7 @@ customElements.define('dom-bind', DomBind);
 
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14653,7 +14885,7 @@ customElements.define(DomRepeat.is, DomRepeat);
 
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14924,7 +15156,7 @@ customElements.define(DomIf.is, DomIf);
 
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15345,12 +15577,12 @@ customElements.define(ArraySelector.is, ArraySelector);
 
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* unused harmony export CustomStyle */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__webcomponents_shadycss_entrypoints_custom_style_interface_js__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__webcomponents_shadycss_entrypoints_custom_style_interface_js__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_style_gather_js__ = __webpack_require__(31);
 
 
@@ -15442,7 +15674,7 @@ window.customElements.define('custom-style', CustomStyle);
 
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15516,7 +15748,7 @@ if (!window.ShadyCSS) {
 window.ShadyCSS.CustomStyleInterface = customStyleInterface;
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15594,7 +15826,7 @@ const OptionalMutableDataBehavior = {
 
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15930,12 +16162,12 @@ document.head.appendChild($_documentContainer);
 
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polymer_polymer_js__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__iron_checked_element_behavior_iron_checked_element_behavior_js__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__iron_checked_element_behavior_iron_checked_element_behavior_js__ = __webpack_require__(69);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__paper_inky_focus_behavior_js__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__paper_ripple_behavior_js__ = __webpack_require__(29);
 
@@ -15984,7 +16216,7 @@ const PaperCheckedElementBehavior = [
 
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16094,7 +16326,7 @@ const IronCheckedElementBehavior = [
 
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16791,7 +17023,7 @@ Object(__WEBPACK_IMPORTED_MODULE_3__polymer_lib_legacy_polymer_fn_js__["a" /* Po
 
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16922,12 +17154,12 @@ Object(__WEBPACK_IMPORTED_MODULE_4__polymer_lib_legacy_polymer_fn_js__["a" /* Po
 
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__iron_icon_iron_icon_js__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__iron_iconset_svg_iron_iconset_svg_js__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__iron_iconset_svg_iron_iconset_svg_js__ = __webpack_require__(73);
 
 
 const $_documentContainer = document.createElement('div');
@@ -17251,7 +17483,7 @@ document.head.appendChild($_documentContainer);
 
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17497,15 +17729,15 @@ Object(__WEBPACK_IMPORTED_MODULE_2__polymer_lib_legacy_polymer_fn_js__["a" /* Po
 
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_polymer_polymer_polymer_element_js__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_polymer_iron_flex_layout_iron_flex_layout_js__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_polymer_paper_button_paper_button_js__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_polymer_paper_button_paper_button_js__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__node_modules_polymer_paper_checkbox_paper_checkbox_js__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__node_modules_polymer_paper_input_paper_input_js__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__node_modules_polymer_paper_input_paper_input_js__ = __webpack_require__(79);
 
 
 
@@ -17523,6 +17755,18 @@ class TodoInput extends __WEBPACK_IMPORTED_MODULE_0__node_modules_polymer_polyme
                 :host {
                     @apply(--layout-horizontal);
                     @apply(--layout-center);
+                }
+                paper-button {
+                    --paper-button: {
+                        background-color: #33c485;
+                        color: white;
+                        font-weight: bold;
+                        padding: 5px;
+                        margin-left: 20px;
+                        border-radius: 4px;
+                        text-transform: none;
+                        font-family: 'PT Sans', sans-serif;
+                    }   
                 }
             </style>
             <paper-checkbox id="checkBox" checked="{{completed}}"></paper-checkbox>
@@ -17556,14 +17800,14 @@ customElements.define(TodoInput.is, TodoInput);
 
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polymer_polymer_js__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__iron_flex_layout_iron_flex_layout_js__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__paper_behaviors_paper_button_behavior_js__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__paper_styles_element_styles_paper_material_styles_js__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__paper_behaviors_paper_button_behavior_js__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__paper_styles_element_styles_paper_material_styles_js__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__polymer_lib_legacy_polymer_fn_js__ = __webpack_require__(2);
 
 
@@ -17701,7 +17945,7 @@ Object(__WEBPACK_IMPORTED_MODULE_4__polymer_lib_legacy_polymer_fn_js__["a" /* Po
 
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17800,12 +18044,12 @@ const PaperButtonBehavior = [
 
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polymer_polymer_js__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shadow_js__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shadow_js__ = __webpack_require__(78);
 
 
 const $_documentContainer = document.createElement('div');
@@ -17861,7 +18105,7 @@ document.head.appendChild($_documentContainer);
 
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17939,17 +18183,17 @@ document.head.appendChild($_documentContainer);
 
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polymer_polymer_js__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__iron_form_element_behavior_iron_form_element_behavior_js__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__iron_input_iron_input_js__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__paper_input_behavior_js__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__paper_input_char_counter_js__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__paper_input_container_js__ = __webpack_require__(84);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__paper_input_error_js__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__iron_input_iron_input_js__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__paper_input_behavior_js__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__paper_input_char_counter_js__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__paper_input_container_js__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__paper_input_error_js__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__polymer_lib_legacy_polymer_fn_js__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__polymer_lib_elements_dom_module_js__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__polymer_polymer_element_js__ = __webpack_require__(4);
@@ -18130,12 +18374,12 @@ Object(__WEBPACK_IMPORTED_MODULE_7__polymer_lib_legacy_polymer_fn_js__["a" /* Po
 
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polymer_polymer_js__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__iron_a11y_announcer_iron_a11y_announcer_js__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__iron_a11y_announcer_iron_a11y_announcer_js__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__iron_validatable_behavior_iron_validatable_behavior_js__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__polymer_lib_legacy_polymer_fn_js__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__polymer_lib_legacy_polymer_dom_js__ = __webpack_require__(3);
@@ -18423,7 +18667,7 @@ Object(__WEBPACK_IMPORTED_MODULE_3__polymer_lib_legacy_polymer_fn_js__["a" /* Po
 
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18505,7 +18749,7 @@ IronA11yAnnouncer.requestAvailability = function() {
 
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19062,7 +19306,7 @@ const PaperInputBehavior = [
 
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19140,7 +19384,7 @@ Object(__WEBPACK_IMPORTED_MODULE_3__polymer_lib_legacy_polymer_fn_js__["a" /* Po
 
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports) {
 
 const $_documentContainer = document.createElement('div');
@@ -19153,7 +19397,7 @@ document.head.appendChild($_documentContainer);
 
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19736,7 +19980,7 @@ Object(__WEBPACK_IMPORTED_MODULE_4__polymer_lib_legacy_polymer_fn_js__["a" /* Po
 
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
