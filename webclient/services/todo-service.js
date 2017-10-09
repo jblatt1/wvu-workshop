@@ -36,6 +36,6 @@ class TodoService {
     }
 }
 
-const instance = new TodoService("0.0.0.0:" + process.env.PORT || 80);
+const instance = new TodoService("");
 
 export default instance;
