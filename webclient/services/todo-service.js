@@ -27,6 +27,13 @@ class TodoService {
             body: JSON.stringify(todo)
         }).then(response => response.json());
     }
+
+    delete(id) {
+        return fetch(this.host + id, {
+            method: "DELETE",
+            mode: 'cors',
+        });
+    }
 }
 
 const instance = new TodoService("http://localhost:8080");

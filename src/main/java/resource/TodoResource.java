@@ -18,43 +18,50 @@ import model.Todo;
 @Path("/todo")
 @Produces(MediaType.APPLICATION_JSON)
 public class TodoResource {
-	private final TodoDAO dao;
+    private final TodoDAO dao;
 
-	public TodoResource(TodoDAO dao) {
-		this.dao = dao;
-	}
+    public TodoResource(TodoDAO dao) {
+        this.dao = dao;
+    }
 
-	@GET
-	public Collection<Todo> getTodos(@QueryParam("completed") Boolean completed) {
-		Collection<Todo> returnValue;
-		if (completed != null) {
-			returnValue = this.dao.getTodoByCompleted(completed);
-		} else {
-			returnValue = this.dao.getAllTodos();
-		}
-		return returnValue;
-	}
+    @GET
+    public Collection<Todo> getTodos(@QueryParam("completed") Boolean completed) {
+        Collection<Todo> returnValue;
+        if (completed != null) {
+            returnValue = this.dao.getTodoByCompleted(completed);
+        } else {
+            returnValue = this.dao.getAllTodos();
+        }
+        return returnValue;
+    }
 
-	@GET
-	@Path("/{id}")
-	public Todo getTodo(@PathParam("id") String id) {
-		return this.dao.getTodo(id);
-	}
+    @GET
+    @Path("/{id}")
+    public Todo getTodo(@PathParam("id") String id) {
+        return this.dao.getTodo(id);
+    }
 
-	@POST
-	public Todo createTodo(Todo todo) {
-		return this.dao.createTodo(todo);
-	}
+    @POST
+    public Todo createTodo(Todo todo) {
+        return this.dao.createTodo(todo);
+    }
 
-	@PUT
-	@Path("{id}")
-	public Todo updateTodo(@PathParam("id") String id, Todo patch) {
-		return this.dao.updateTodo(id, patch);
-	}
+    @PUT
+    @Path("{id}")
+    public Todo updateTodo(@PathParam("id") String id, Todo patch) {
+        return this.dao.updateTodo(id, patch);
+    }
 
-	@DELETE
-	@Path("{id}")
-	public void deleteTodo(@PathParam("id") String id) {
-		this.dao.deleteTodo(id);
-	}
+    @DELETE
+    @Path("/{id}")
+    public void deleteTodo(@PathParam("id") String id) {
+        this.dao.deleteTodo(id);
+    }
+
+    @GET
+    @Path("/count")
+    public Integer getTodoCount() {
+        return this.dao.getTodoCount();
+    }
+
 }
