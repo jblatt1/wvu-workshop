@@ -60,7 +60,7 @@ public class TodoDAOInMemory implements TodoDAO {
 
     @Override
     public Integer getTodoCount() {
-        return this.todos.size();
+        return counter;
     }
 
 }
