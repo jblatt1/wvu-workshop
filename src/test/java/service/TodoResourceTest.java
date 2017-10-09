@@ -4,7 +4,6 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 import java.util.Collection;
-import java.util.UUID;
 
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.GenericType;
@@ -14,7 +13,6 @@ import org.junit.Test;
 
 import dao.TodoDAO;
 import io.dropwizard.testing.junit.ResourceTestRule;
-import jersey.repackaged.com.google.common.collect.Lists;
 import model.Todo;
 import resource.TodoResource;
 
@@ -30,36 +28,22 @@ public class TodoResourceTest {
     @Test
     public void testGetAll() {
         // Setup
-        when(dao.getAllTodos()).thenReturn(Lists.newArrayList(new Todo(), new Todo(), new Todo()));
 
         // Execute
-        Collection<Todo> loaded = getTodos();
 
         // Verify
-        assertEquals(3, loaded.size());
+        
     }
 
     @Test
-    public void testUpdate() {
+    public void testDelete() {
         // Setup
-        Todo todo = new Todo();
-        todo.setId(UUID.randomUUID()
-                       .toString());
-        todo.setTitle("Treat yourself");
 
-        Todo edited = new Todo();
-        edited.setId(todo.getId());
-        edited.setTitle("Treat yoself");
-
-        Todo result = todo.update(edited);
-
-        when(dao.updateTodo(eq(todo.getId()), eq(edited))).thenReturn(result);
 
         // Execute
-        Todo updated =  updateTodo(edited);
 
         // Verify
-        assertEquals("Treat yoself", updated.getTitle());
+        
     }
 
     // Test Helpers

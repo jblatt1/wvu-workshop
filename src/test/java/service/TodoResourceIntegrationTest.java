@@ -24,50 +24,27 @@ public class TodoResourceIntegrationTest {
     @Test
     public void testCreateTodo() {
         // Setup
-        Todo todo = new Todo();
-        todo.setTitle("title");
-        todo.setCompleted(true);
+        
 
         // Execute
-        Todo created = createTodo(todo);
+        
 
         // Verify
-        assertNotNull(created.getId());
-        assertEquals(todo.getTitle(), created.getTitle());
-
-        Todo loaded = getTodo(created.getId());
-        assertEquals(created, loaded);
+        
     }
 
     @Test
     public void testCount() {
         // Setup
-        createTodo(new Todo());
-        createTodo(new Todo());
-        createTodo(new Todo());
-
-        Todo createdToDelete = createTodo(new Todo());
-
+        
         // Execute
-        Integer count = RULE.client()
-                            .target("http://localhost:8080/todo/count")
-                            .request()
-                            .get()
-                            .readEntity(Integer.class);
 
         // Verify
-        assertEquals(4, (int) count);
 
         // Delete 1 and execute again
-        deleteTodo(createdToDelete.getId());
-        count = RULE.client()
-                    .target("http://localhost:8080/todo/count")
-                    .request()
-                    .get()
-                    .readEntity(Integer.class);
 
         // Verify
-        assertEquals(3, (int) count);
+        
     }
 
    // Test Helpers
