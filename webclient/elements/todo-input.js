@@ -16,6 +16,18 @@ export class TodoInput extends Element {
                     @apply(--layout-horizontal);
                     @apply(--layout-center);
                 }
+                paper-button {
+                    --paper-button: {
+                        background-color: #33c485;
+                        color: white;
+                        font-weight: bold;
+                        padding: 5px;
+                        margin-left: 20px;
+                        border-radius: 4px;
+                        text-transform: none;
+                        font-family: 'PT Sans', sans-serif;
+                    }   
+                }
             </style>
             <paper-checkbox id="checkBox" checked="{{completed}}"></paper-checkbox>
             <paper-input no-label-float value="{{title}}">Title</paper-input>
