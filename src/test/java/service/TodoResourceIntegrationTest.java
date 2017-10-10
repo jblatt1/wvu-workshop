@@ -22,13 +22,13 @@ public class TodoResourceIntegrationTest {
             TodoApplication.class, ResourceHelpers.resourceFilePath("config.yaml"));
 
     @Test
-    public void testCreateTodo() {
+    public void testGetTodo() {
         // Setup
         
         // Execute
 
-        // Verify
-        
+        // Assert
+
     }
 
     @Test
@@ -37,7 +37,7 @@ public class TodoResourceIntegrationTest {
         
         // Execute
 
-        // Verify
+        // Assert
 
     }
 
@@ -80,5 +80,13 @@ public class TodoResourceIntegrationTest {
             .target("http://localhost:8080/todo/" + id)
             .request()
             .delete();
+    }
+    
+    private Integer getCount() {
+        return RULE.client()
+                .target("http://localhost:8080/todo/count")
+                .request()
+                .get()
+                .readEntity(Integer.class);
     }
 }

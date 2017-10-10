@@ -31,7 +31,7 @@ public class TodoResourceTest {
 
         // Execute
 
-        // Verify
+        // Assert
         
     }
 
@@ -41,7 +41,7 @@ public class TodoResourceTest {
 
         // Execute
 
-        // Verify
+        // Assert
         
     }
 
