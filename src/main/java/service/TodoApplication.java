@@ -10,13 +10,22 @@ import org.eclipse.jetty.servlets.CrossOriginFilter;
 import dao.TodoDAOInMemory;
 import io.dropwizard.Application;
 import io.dropwizard.Configuration;
+import io.dropwizard.assets.AssetsBundle;
+import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import resource.TodoResource;
 
 public class TodoApplication extends Application<Configuration> {
 
+
 	public static void main(String[] args) throws Exception {
+		System.out.println("Todo Main");
 		new TodoApplication().run(new String[] { "server", "src/main/resources/config.yaml" });
+	}
+	@Override
+	public void initialize(Bootstrap<Configuration> bootstrap) {
+		super.initialize(bootstrap);
+		bootstrap.addBundle(new AssetsBundle("/assets/", "/"));
 	}
 
 	@Override

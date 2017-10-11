@@ -1,0 +1,29 @@
+{
+  "name": "wvu-workshop",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "Billy Hardy <billy92@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jblatt1/wvu-workshop",
+  "private": true,
+  "flat": true,
+  "scripts": {
+    "start": "webpack --config webpack.config.js"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "@polymer/paper-checkbox": "^3.0.0-pre.1",
+    "@polymer/paper-button": "^3.0.0-pre.1",
+    "@polymer/paper-input": "^3.0.0-pre.1",
+    "@polymer/paper-icon-button": "^3.0.0-pre.1",
+    "@polymer/iron-icons": "^3.0.0-pre.1"
+  }
+}

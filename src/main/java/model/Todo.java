@@ -2,54 +2,59 @@ package model;
 
 public class Todo {
 
-	private String title;
-	private Boolean completed;
-	private String id;
+    private String title;
+    private Boolean completed;
+    private String id;
 
-	public String getTitle() {
-		return title;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	public Boolean getCompleted() {
-		return completed;
-	}
+    public Boolean getCompleted() {
+        return completed;
+    }
 
-	public void setCompleted(Boolean completed) {
-		this.completed = completed;
-	}
+    public void setCompleted(Boolean completed) {
+        this.completed = completed;
+    }
 
-	public String getId() {
-		return id;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public Todo update(Todo todo) {
-		if (todo.getTitle() != null) {
-			this.title = todo.getTitle();
-		}
-		if (todo.getCompleted() != null) {
-			this.completed = todo.getCompleted();
-		}
+    public Todo update(Todo todo) {
+        if (todo.getTitle() != null) {
+            this.title = todo.getTitle();
+        }
+        if (todo.getCompleted() != null) {
+            this.completed = todo.getCompleted();
+        }
 
-		return this;
-	}
+        return this;
+    }
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((completed == null) ? 0 : completed.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((title == null) ? 0 : title.hashCode());
-		return result;
-	}
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((completed == null) ? 0 : completed.hashCode());
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        result = prime * result + ((title == null) ? 0 : title.hashCode());
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Todo [title=" + title + ", completed=" + completed + ", id=" + id + "]";
+    }
 
 	@Override
 	public boolean equals(Object obj) {
@@ -76,11 +81,6 @@ public class Todo {
 		} else if (!title.equals(other.title))
 			return false;
 		return true;
-	}
-
-	@Override
-	public String toString() {
-		return "Todo [title=" + title + ", completed=" + completed + ", id=" + id + "]";
 	}
 
 }
